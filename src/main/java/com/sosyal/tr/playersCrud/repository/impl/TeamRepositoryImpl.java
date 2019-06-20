@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.ListJoin;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +41,13 @@ public class TeamRepositoryImpl implements TeamRepositoryCustom {
 		ListJoin<Player, Contract> contracts = player.join(Player_.contracts);
 		Join<Contract, Team> team = contracts.join(Contract_.team);
 
-		query.where(cb.and(
-				cb.equal(team.get(Team_.teamId), id),
-				cb.equal(contracts.get(Contract_.season), season)));
+		Predicate predicate = cb.equal(team.get(Team_.teamId), id);
+		if (season != null) {
+			predicate = cb.and(predicate,
+					cb.equal(contracts.get(Contract_.season), season));
+		}
+		
+		query.where(predicate);
 		query.distinct(true);
 		
 		List<Player> resultList = em.createQuery(query)

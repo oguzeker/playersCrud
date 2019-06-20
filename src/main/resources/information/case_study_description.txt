@@ -1,0 +1,31 @@
+SOSYAL YAZILIM CASE STUDY
+Sosyal Yazılım product ekibi geliştirmek istediği yeni özellikte, 
+- futbolcuları ve 
+- takımları 
+özetleyen bir sayfa yapmak istiyor. Öncelikle bu datayı oluşturmak i̧cin, takım ve oyuncuların CRUD operasyonlarını içeren bir Rest API’ye ihtiyacımız var. Girilen dataları bir mikro servisten yayınlamak istiyoruz.  
+
+   Başlamadan önce bir hatırlatma:
+Sizin belirleyeceğiniz model ve datalar ile uygulama ayağa kaldırılmalı
+
+Senaryo 1:	insert update ve delete
+Takım ve futbolcu arşiv datasını oluşturmak için, insert update ve delete isteklerini içeren REST Api.
+
+Senaryo 2:	getAllPlayers(), getTeamsOfPlayer(playerId)
+Client, bütün futbolcuları listeleyip, ardından seçilen futbolcunun takımlarını ikinci istekte alacak.
+
+Senaryo 3:	getAllTeams(), getPlayersOfTeam(teamId, year)
+Client bütün takımları listeleyip, ardından takım ve yıl parametreleri ile sözleşmesi olan futbolcuları isteyecek.
+
+Senaryo 4:	getPlayerDetails(playerId)
+Futbolcuların niteliklerinin ve transfer ücretinin alındığı bir endpoint tasarlayacağız. Her takım sözleşme ücretini kendi para birimi üzerinden hesaplayacak.
+Transfer Ücreti = Tecrübe AY sayısı * 100.000 / YAŞI
+Takım Komisyonu, Transfer Ücreti’nin %10 u kadar olacak,
+Sözleşme bedeli ise Transfer Ücreti + Takım Komisyonu olarak hesaplanacak.
+
+Beklentiler
+Yaptığın projeyi Java 8 kullanarak mikro servis mimarisine uygun yazarsan seviniriz. Ayrıca ilişkisel veri tabanı ile çalışabilmeli ve Rest pratiklerine uygun olmalı,
+Unit testler olmazsa olmazımız.
+Swagger ve Postman toollarını kullanarak projeyi teslim edersen daha rahat test edebiliriz.
+
+
+

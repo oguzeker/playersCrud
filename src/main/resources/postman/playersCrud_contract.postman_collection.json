@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "dae12978-5394-4bed-839c-767f472d1d16",
+		"name": "playersCrud_contract",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/contract",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/contract",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"contract"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/contract/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/contract/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"contract",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/contract/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contractId\": 1,\n    \"player\": {\n        \"playerId\": 3,\n        \"birthdate\": \"2019-06-15\",\n        \"careerStartDate\": \"1999-06-15\",\n        \"name\": \"Santorini\"\n    },\n    \"team\": {\n        \"teamId\": 3,\n        \"currency\": \"JPY\",\n        \"name\": \"Galatasaray\"\n    },\n    \"price\": 100,\n    \"year\": 1999\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/contract/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"contract",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/contract",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"player\": {\n        \"playerId\": 7,\n        \"birthdate\": \"2019-06-15\",\n        \"careerStartDate\": \"1999-06-15\",\n        \"name\": \"Santorini\"\n    },\n    \"team\": {\n        \"teamId\": 2,\n        \"currency\": \"JPY\",\n        \"name\": \"Galatasaray\"\n    },\n    \"transferPrice\": 100,\n    \"teamCommission\": 200,\n    \"season\": 1999\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/contract",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"contract"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/contract/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8081/contract/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"contract",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

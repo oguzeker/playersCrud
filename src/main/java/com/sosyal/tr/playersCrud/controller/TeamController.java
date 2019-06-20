@@ -74,7 +74,7 @@ public class TeamController {
     
     @GetMapping("/getPlayers")
     public List<Player> getPlayersOfTeam(@RequestParam Long teamId,
-    		@RequestParam Long season) {
+    		@RequestParam(required = false) Long season) {
     	List<Player> players = teamService.getPlayersOfTeam(teamId, season);
     	
     	if (CollectionUtils.isEmpty(players)) {

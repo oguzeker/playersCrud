@@ -51,7 +51,7 @@ public class ContractService {
     	Long commission = calculateTeamCommission(transferPrice);
     	contract.setTeamCommission(commission);
     	
-    	// Transfer Ucreti + Takim Komisyonu
+    	// Transfer price + team commission
     	contract.setTotalAmount(transferPrice + commission);
     	
     	contract.setPlayer(player);
@@ -72,14 +72,14 @@ public class ContractService {
         contractDao.deleteById(id);
     }
 
-    // Tecrube Ay sayisi * 100.000 / YASI
+    // Experience amount in months * 100.000 / age of player
 	private Long calculateTransferPrice(LocalDate careerStartDate, LocalDate birthdate) {
 		return new Long(Period.between(careerStartDate, LocalDate.now()).toTotalMonths()
 				* TRANSFER_PRICE_COEFFICIENT
 				/ Period.between(birthdate, LocalDate.now()).getYears());
 	}
 	
-	// TransferPrice * 10%
+	// Transfer price * 10%
 	private long calculateTeamCommission(Long transferPrice) {
 		return new Double(transferPrice * COMMISSION_COEFFICIENT).longValue();
 	}
